@@ -1,9 +1,12 @@
 # Modulos
 import customtkinter
+import pypokedex
+import urllib3
+from io import BytesIO
 from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
-from data import *
+from fuction import load_pokemon
 
 # Temas
 customtkinter.set_appearance_mode('dark')
@@ -53,7 +56,7 @@ search = customtkinter.CTkEntry(master=window, placeholder_text='Nome ou ID', fo
 search.place(x=275, y=310, anchor=CENTER)
 
 # Criando o botão de procurar pokemons
-button_load = customtkinter.CTkButton(master=window, width=120, height=32,text='Carregar Pokemon', font=('Fixedsys', 10), hover_color=value, command=lambda: load_pokemon(pokemon, size=(150, 150)size=(150, 150)))
+button_load = customtkinter.CTkButton(master=window, width=120, height=32,text='Carregar Pokemon', font=('Fixedsys', 10), hover_color=value, command=lambda: load_pokemon(size=(150, 150)))
 button_load.place(x=275, y=350, anchor=CENTER)
 
 # Criando o reset de valores
