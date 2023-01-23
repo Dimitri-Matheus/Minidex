@@ -6,7 +6,6 @@ from io import BytesIO
 from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
-from fuction import load_pokemon
 
 # Temas
 customtkinter.set_appearance_mode('dark')
@@ -46,6 +45,33 @@ pokemon_type.place(x=275, y=45, anchor=CENTER)
 # ID
 pokemon_id = customtkinter.CTkLabel(master=frame_pokemon, text='', font=('Fixedsys', 21), text_color=white)
 pokemon_id.place(x=275, y=65, anchor=CENTER)
+
+# A Função que vai gerar os pokemons
+def load_pokemon(size=(50, 50)):
+    try:
+        sprite = search.get()
+        pokemon = pypokedex.get(name=sprite)
+        http = urllib3.PoolManager()
+        response = http.request('GET', pokemon.sprites.front.get('default'))
+        image = PIL.Image.open(BytesIO(response.data))
+        warning.configure(text=f'O {pokemon.name} foi encontrado com sucesso na database!'.upper())
+
+    except:
+        sprite = search.get()
+        pokemon = pypokedex.get(id=sprite)
+        http = urllib3.PoolManager()
+        response = http.request('GET', pokemon.sprites.front.get('default'))
+        image = PIL.Image.open(BytesIO(response.data))
+    #Configuração das imagens
+    image = image.resize(size, resample=PIL.Image.LANCZOS)
+    img = PIL.ImageTk.PhotoImage(image)
+    pokemon_image.configure(image=img)
+    pokemon_image.image = img
+
+    #Configuração das informações
+    pokemon_name.configure(text=f'{pokemon.name}')
+    pokemon_type.configure(text=' - '.join([t for t in pokemon.types]))
+    pokemon_id.configure(text=f'{pokemon.dex}')
 
 # Criando o aviso
 warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
