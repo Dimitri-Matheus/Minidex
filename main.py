@@ -6,6 +6,7 @@ from io import BytesIO
 from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
+import os
 
 # Temas
 customtkinter.set_appearance_mode('dark')
@@ -17,6 +18,9 @@ red = "#ef5350"
 gray = '#333432'
 value = "#38576b"
 letter = "#403d3d"
+
+# Cache das imagens geradas
+image_cache = {}
 
 # Criando a janela
 window = customtkinter.CTk()
@@ -48,20 +52,28 @@ pokemon_id.place(x=275, y=65, anchor=CENTER)
 
 # A Função que vai gerar os pokemons
 def load_pokemon(size=(50, 50)):
+    sprite = search.get()
     try:
-        sprite = search.get()
         pokemon = pypokedex.get(name=sprite)
-        http = urllib3.PoolManager()
-        response = http.request('GET', pokemon.sprites.front.get('default'))
-        image = PIL.Image.open(BytesIO(response.data))
-        warning.configure(text=f'O {pokemon.name} foi encontrado com sucesso na database!'.upper())
-
     except:
-        sprite = search.get()
         pokemon = pypokedex.get(id=sprite)
+    warning.configure(text=f'O {pokemon.name} foi encontrado com sucesso na database!'.upper())
+
+    pokemon_url = pokemon.sprites.front.get('default')
+
+    # Recuperação do cache das imagens
+    if pokemon_url in image_cache:
+        image = image_cache[pokemon_url]
+        print('Imagem recuperada do cacheamento!')
+
+    # Criação do cache das imagens
+    else:
         http = urllib3.PoolManager()
-        response = http.request('GET', pokemon.sprites.front.get('default'))
+        response = http.request('GET', pokemon_url)
         image = PIL.Image.open(BytesIO(response.data))
+        image_cache[pokemon_url] = image
+        print('Imagem criada com sucesso!')
+
     #Configuração das imagens
     image = image.resize(size, resample=PIL.Image.LANCZOS)
     img = PIL.ImageTk.PhotoImage(image)
