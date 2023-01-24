@@ -7,6 +7,7 @@ from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
 import os
+import pickle
 
 # Temas
 customtkinter.set_appearance_mode('dark')
@@ -50,8 +51,27 @@ pokemon_type.place(x=275, y=45, anchor=CENTER)
 pokemon_id = customtkinter.CTkLabel(master=frame_pokemon, text='', font=('Fixedsys', 21), text_color=white)
 pokemon_id.place(x=275, y=65, anchor=CENTER)
 
+# Salvar o cache
+def save_cache():
+    with open('image_cache.pickle', 'wb') as handle:
+        pickle.dump(image_cache, handle)
+
+# Carregar o cache
+def load_cache():
+    try:
+        with open('image_cache.pickle', 'rb') as handle:
+            return pickle.load(handle)
+    except:
+        return {}
+
+
 # A Função que vai gerar os pokemons
 def load_pokemon(size=(50, 50)):
+
+    # Carregando o cache
+    global image_cache
+    image_cache = load_cache()
+
     sprite = search.get()
     try:
         pokemon = pypokedex.get(name=sprite)
@@ -64,7 +84,7 @@ def load_pokemon(size=(50, 50)):
     # Recuperação do cache das imagens
     if pokemon_url in image_cache:
         image = image_cache[pokemon_url]
-        print('Imagem recuperada do cacheamento!')
+        print('Imagem recuperada do cache!')
 
     # Criação do cache das imagens
     else:
@@ -72,7 +92,9 @@ def load_pokemon(size=(50, 50)):
         response = http.request('GET', pokemon_url)
         image = PIL.Image.open(BytesIO(response.data))
         image_cache[pokemon_url] = image
+        save_cache() # Carregando cache salvo
         print('Imagem criada com sucesso!')
+
 
     #Configuração das imagens
     image = image.resize(size, resample=PIL.Image.LANCZOS)
@@ -84,6 +106,7 @@ def load_pokemon(size=(50, 50)):
     pokemon_name.configure(text=f'{pokemon.name}')
     pokemon_type.configure(text=' - '.join([t for t in pokemon.types]))
     pokemon_id.configure(text=f'{pokemon.dex}')
+
 
 # Criando o aviso
 warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
