@@ -6,17 +6,15 @@ from io import BytesIO
 from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
-import os
 import pickle
 
-# Temas
-customtkinter.set_appearance_mode('dark')
-customtkinter.set_default_color_theme('green')
+# Cores
 black = "#444466"
 white = "#feffff"
 blue = "#6f9fbd"
 red = "#ef5350"
 gray = '#333432'
+silver = '#D1D1D1'
 value = "#38576b"
 letter = "#403d3d"
 
@@ -26,6 +24,7 @@ image_cache = {}
 # Criando a janela
 window = customtkinter.CTk()
 window.geometry('550x510')
+window.resizable(width=False, height=False)
 window.title('Pokedex')
 
 ttk.Separator(window, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
@@ -34,21 +33,43 @@ ttk.Separator(window, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
 frame_pokemon = customtkinter.CTkFrame(master=window, width=550, height=230)
 frame_pokemon.grid(row=1, column=0)
 
+# Criação do sistema de temas
+customtkinter.set_default_color_theme('green')
+option_default = customtkinter.StringVar(value='Sistema')
+
+def change_theme(value):
+    if value == 'Escuro':
+        # Configuração para o tema escuro
+        customtkinter.set_appearance_mode("dark")
+        
+    elif value == 'Claro':
+        # Configuração para o tema claro
+        customtkinter.set_appearance_mode("light")
+    else:
+        # Configuração para o tema do sistema
+        customtkinter.set_appearance_mode("system")
+
+
+theme = customtkinter.CTkOptionMenu(master=window, values=['Sistema', 'Escuro', 'Claro'], command=change_theme, variable=option_default, font=('Fixedsys', 10))
+theme.configure(button_color=(white, gray), button_hover_color=(silver, letter), text_color=(gray, white), fg_color=(white, gray))
+theme.configure(dropdown_font=('Fixedsys', 5), corner_radius=5)
+theme.place(x=10, y=485, anchor=W)
+
 # Local da imagem
 pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/pokeball/Poké_Bal.png"), size=(100, 100))
 pokemon_image = customtkinter.CTkLabel(master=frame_pokemon, text='', image=pokeball)
 pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
 # Nome
-pokemon_name = customtkinter.CTkLabel(master=frame_pokemon, text='Pokedex Modern', font=('Fixedsys', 27), text_color=white)
+pokemon_name = customtkinter.CTkLabel(master=frame_pokemon, text='Pokedex Modern', font=('Fixedsys', 27), text_color=(gray, white))
 pokemon_name.place(x=275, y=20, anchor=CENTER)
 
 # Tipo
-pokemon_type = customtkinter.CTkLabel(master=frame_pokemon, text='Digite o nome ou id do seu pokemon!', font=('Fixedsys', 21), text_color=white)
+pokemon_type = customtkinter.CTkLabel(master=frame_pokemon, text='Digite o nome ou id do seu pokemon!', font=('Fixedsys', 21), text_color=(gray, white))
 pokemon_type.place(x=275, y=45, anchor=CENTER)
 
 # ID
-pokemon_id = customtkinter.CTkLabel(master=frame_pokemon, text='', font=('Fixedsys', 21), text_color=white)
+pokemon_id = customtkinter.CTkLabel(master=frame_pokemon, text='', font=('Fixedsys', 21), text_color=(gray, white))
 pokemon_id.place(x=275, y=65, anchor=CENTER)
 
 # Salvar o cache
@@ -110,7 +131,7 @@ def load_pokemon(size=(50, 50)):
 
 # Criando o aviso
 warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
-warning.place(x=275, y=450, anchor=CENTER)
+warning.place(x=275, y=440, anchor=CENTER)
 
 # Criando a pesquisa
 search = customtkinter.CTkEntry(master=window, placeholder_text='Nome ou ID', font=('Fixedsys', 10))
