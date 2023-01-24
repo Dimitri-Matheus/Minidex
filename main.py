@@ -7,6 +7,7 @@ from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
 import pickle
+import webbrowser
 
 # Cores
 black = "#444466"
@@ -132,6 +133,31 @@ def load_pokemon(size=(50, 50)):
 # Criando o aviso
 warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
 warning.place(x=275, y=440, anchor=CENTER)
+
+# A função para ficar mudando a mensagem
+status = 'default'
+
+def warning_time(label, interval):
+    global status
+    if status == 'default':
+        label.configure(text="Créditos: Dimitri")
+        status = 'msg'
+    elif status == "msg":
+        label.configure(text="Altere a aparência da sua pokedex!")
+        status = 'github'
+    elif status == 'github':
+        label.configure(text="Se você gostou do meu projeto me siga no github!")
+        status = 'link'
+    elif status == 'link':
+        def url(event):
+            webbrowser.open_new('https://github.com/Dimitri-Matheus')
+        label.configure(text='https://github.com/Dimitri-Matheus', text_color=(blue))
+        label.bind("<Button-1>", url)
+        status = 'default'
+    window.after(interval, warning_time, label, interval)
+
+# Configuração do tempo determinado
+warning_time(warning, 10000)
 
 # A validação do enter
 def validate_enter(event):
