@@ -22,6 +22,9 @@ letter = "#403d3d"
 # Cache das imagens geradas
 image_cache = {}
 
+# Status da notificação
+status = 'default'
+
 # Criando a janela
 window = customtkinter.CTk()
 window.geometry('550x510')
@@ -89,6 +92,8 @@ def load_cache():
 
 # A Função que vai gerar os pokemons
 def load_pokemon(size=(50, 50)):
+    if warning_time_update:
+        window.after_cancel(warning_time_update)
 
     # Carregando o cache
     global image_cache
@@ -131,33 +136,45 @@ def load_pokemon(size=(50, 50)):
 
 
 # Criando o aviso
-warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
+warning = customtkinter.CTkLabel(master=window, text='', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
 warning.place(x=275, y=440, anchor=CENTER)
 
-# A função para ficar mudando a mensagem
-status = 'default'
+# Função da url
+def url(event):
+    webbrowser.open_new('https://github.com/Dimitri-Matheus')
 
+warning_time_update = None
+# A função para ficar mudando a mensagem
 def warning_time(label, interval):
-    global status
+    global status, warning_time_update
+
     if status == 'default':
-        label.configure(text="Créditos: Dimitri")
-        status = 'msg'
-    elif status == "msg":
+        label.configure(text="Créditos: Dimitri", text_color=(gray, white))
+        label.unbind('<Button-1>')
+        print('msg credits')
+        status = 'theme' #Mudança da variável status 1
+
+    elif status == 'theme':
         label.configure(text="Altere a aparência da sua pokedex!")
-        status = 'github'
+        print('msg theme')
+        status = 'github' #Mudança da variável status 2
+
     elif status == 'github':
         label.configure(text="Se você gostou do meu projeto me siga no github!")
-        status = 'link'
+        print('msg github')
+        status = 'link' #Mudança da variável status 3
+
     elif status == 'link':
-        def url(event):
-            webbrowser.open_new('https://github.com/Dimitri-Matheus')
-        label.configure(text='https://github.com/Dimitri-Matheus', text_color=(blue))
-        label.bind("<Button-1>", url)
-        status = 'default'
-    window.after(interval, warning_time, label, interval)
+        label.configure(text='🐙 GITHUB', text_color=(red))
+        print('msg link')
+        label.bind('<Button-1>', url)
+        status = 'default' #Mudança da variável status 1
+
+    warning_time_update = window.after(interval, warning_time, label, interval)
+
 
 # Configuração do tempo determinado
-warning_time(warning, 10000)
+warning_time(warning, 7000)
 
 # A validação do enter
 def validate_enter(event):
@@ -178,7 +195,7 @@ def reset_values():
     pokemon_type.configure(text='Digite o nome ou id do seu pokemon!')
     pokemon_id.configure(text='')
     pokemon_image.configure(image=pokeball, text='')
-    warning.configure(text='Créditos: Dimitri')
+    warning_time(warning, 7000)
     search.delete(0, 'end')
 
 reset_button = customtkinter.CTkButton(master=window, text='Redefinir', font=('Fixedsys', 10), fg_color=red, hover_color=value, command=reset_values)
