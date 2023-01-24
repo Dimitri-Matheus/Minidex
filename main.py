@@ -133,9 +133,14 @@ def load_pokemon(size=(50, 50)):
 warning = customtkinter.CTkLabel(master=window, text='Créditos: Dimitri', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
 warning.place(x=275, y=440, anchor=CENTER)
 
+# A validação do enter
+def validate_enter(event):
+    load_pokemon(size=(150, 150))
+
 # Criando a pesquisa
 search = customtkinter.CTkEntry(master=window, placeholder_text='Nome ou ID', font=('Fixedsys', 10))
 search.place(x=275, y=310, anchor=CENTER)
+search.bind('<Return>', validate_enter)
 
 # Criando o botão de procurar pokemons
 button_load = customtkinter.CTkButton(master=window, width=120, height=32,text='Carregar Pokemon', font=('Fixedsys', 10), hover_color=value, command=lambda: load_pokemon(size=(150, 150)))
