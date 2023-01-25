@@ -10,14 +10,15 @@ import pickle
 import webbrowser
 
 # Cores
-black = "#444466"
-white = "#feffff"
-blue = "#6f9fbd"
-red = "#ef5350"
+black = '#444466'
+white = '#feffff'
+blue = '#6f9fbd'
+red = '#ef5350'
+green = '#40a820'
 gray = '#333432'
 silver = '#D1D1D1'
-value = "#38576b"
-letter = "#403d3d"
+value = '#38576b'
+letter = '#403d3d'
 
 # Cache das imagens geradas
 image_cache = {}
@@ -60,10 +61,7 @@ theme.configure(dropdown_font=('Fixedsys', 5), corner_radius=5)
 theme.place(x=10, y=485, anchor=W)
 
 # Local das imagens
-pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/pokeball/Poké_Bal.png"), size=(100, 100))
-pokeball_2 = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/pokeball/pokeball.png"), size=(32, 32))
-pokeball_place = customtkinter.CTkLabel(master=window, text='', image=pokeball_2)
-
+pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/pokeball/Pokeball.png"), size=(100, 100))
 pokemon_image = customtkinter.CTkLabel(master=frame_pokemon, text='', image=pokeball)
 pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
@@ -97,8 +95,6 @@ def load_cache():
 def load_pokemon(size=(50, 50)):
     if warning_time_update:
         window.after_cancel(warning_time_update)
-        pokeball_place.lower()
-        warning.configure()
 
     # Carregando o cache
     global image_cache
@@ -155,7 +151,6 @@ def warning_time(label, interval):
 
     if status == 'default':
         label.configure(text="Créditos: Dimitri", text_color=(gray, white))
-        pokeball_place.lower()
         label.unbind('<Button-1>')
         print('msg credits')
         status = 'theme' #Mudança da variável status 1
@@ -171,12 +166,9 @@ def warning_time(label, interval):
         status = 'link' #Mudança da variável status 3
 
     elif status == 'link':
-        label.configure(text='GITHUB', text_color=(blue))
-        pokeball_place.configure(bg_color=(white, gray))
-        pokeball_place.place(x=220, y=440, anchor=CENTER)
-        pokeball_place.lift()
-        print('msg link')
+        label.configure(text='GITHUB')
         label.bind('<Button-1>', url)
+        print('msg link')
         status = 'default' #Mudança da variável status 1
 
     warning_time_update = window.after(interval, warning_time, label, interval)
