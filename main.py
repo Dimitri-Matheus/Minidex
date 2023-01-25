@@ -152,23 +152,19 @@ def warning_time(label, interval):
     if status == 'default':
         label.configure(text="Créditos: Dimitri", text_color=(gray, white))
         label.unbind('<Button-1>')
-        print('msg credits')
         status = 'theme' #Mudança da variável status 1
 
     elif status == 'theme':
         label.configure(text="Altere a aparência da sua pokedex!")
-        print('msg theme')
         status = 'github' #Mudança da variável status 2
 
     elif status == 'github':
         label.configure(text="Se você gostou do meu projeto me siga no github!")
-        print('msg github')
         status = 'link' #Mudança da variável status 3
 
     elif status == 'link':
         label.configure(text='GITHUB')
         label.bind('<Button-1>', url)
-        print('msg link')
         status = 'default' #Mudança da variável status 1
 
     warning_time_update = window.after(interval, warning_time, label, interval)
