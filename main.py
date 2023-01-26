@@ -6,25 +6,17 @@ from io import BytesIO
 from tkinter import *
 from tkinter import ttk
 import PIL.Image, PIL.ImageTk
-import pickle
-import webbrowser
+from data import change_theme, save_cache, load_cache, notification_change, notification_update, status
 
 # Cores
 black = '#444466'
 white = '#feffff'
 blue = '#6f9fbd'
 red = '#ef5350'
-green = '#40a820'
 gray = '#333432'
 silver = '#D1D1D1'
 value = '#38576b'
 letter = '#403d3d'
-
-# Cache das imagens geradas
-image_cache = {}
-
-# Status da notificação
-status = 'default'
 
 # Criando a janela
 window = customtkinter.CTk()
@@ -38,24 +30,12 @@ ttk.Separator(window, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
 frame_pokemon = customtkinter.CTkFrame(master=window, width=550, height=230)
 frame_pokemon.grid(row=1, column=0)
 
-# Criação do sistema de temas
+# Configuração do tema padrão
 customtkinter.set_default_color_theme('green')
-option_default = customtkinter.StringVar(value='Sistema')
+theme_default = customtkinter.StringVar(value='Sistema')
 
-def change_theme(value):
-    if value == 'Escuro':
-        # Configuração para o tema escuro
-        customtkinter.set_appearance_mode("dark")
-        
-    elif value == 'Claro':
-        # Configuração para o tema claro
-        customtkinter.set_appearance_mode("light")
-    else:
-        # Configuração para o tema do sistema
-        customtkinter.set_appearance_mode("system")
-
-
-theme = customtkinter.CTkOptionMenu(master=window, values=['Sistema', 'Escuro', 'Claro'], command=change_theme, variable=option_default, font=('Fixedsys', 10))
+# Criando do menu de opções
+theme = customtkinter.CTkOptionMenu(master=window, values=['Sistema', 'Escuro', 'Claro'], command=change_theme, variable=theme_default, font=('Fixedsys', 10))
 theme.configure(button_color=(white, gray), button_hover_color=(silver, letter), text_color=(gray, white), fg_color=(white, gray))
 theme.configure(dropdown_font=('Fixedsys', 5), corner_radius=5)
 theme.place(x=10, y=485, anchor=W)
@@ -77,27 +57,12 @@ pokemon_type.place(x=275, y=45, anchor=CENTER)
 pokemon_id = customtkinter.CTkLabel(master=frame_pokemon, text='', font=('Fixedsys', 21), text_color=(gray, white))
 pokemon_id.place(x=275, y=65, anchor=CENTER)
 
-# Salvar o cache
-def save_cache():
-    with open('image_cache.pickle', 'wb') as handle:
-        pickle.dump(image_cache, handle)
-
-# Carregar o cache
-def load_cache():
-    try:
-        with open('image_cache.pickle', 'rb') as handle:
-            return pickle.load(handle)
-    except:
-        return {}
-
-
 # A Função que vai gerar os pokemons
 def load_pokemon(size=(50, 50)):
-    if warning_time_update:
-        window.after_cancel(warning_time_update)
+    if notification_update:
+        window.after_cancel(notification_update)
 
     # Carregando o cache
-    global image_cache
     image_cache = load_cache()
 
     sprite = search.get()
@@ -112,7 +77,6 @@ def load_pokemon(size=(50, 50)):
     # Recuperação do cache das imagens
     if pokemon_url in image_cache:
         image = image_cache[pokemon_url]
-        print('Imagem recuperada do cache!')
 
     # Criação do cache das imagens
     else:
@@ -121,7 +85,6 @@ def load_pokemon(size=(50, 50)):
         image = PIL.Image.open(BytesIO(response.data))
         image_cache[pokemon_url] = image
         save_cache() # Carregando cache salvo
-        print('Imagem criada com sucesso!')
 
 
     #Configuração das imagens
@@ -140,38 +103,12 @@ def load_pokemon(size=(50, 50)):
 warning = customtkinter.CTkLabel(master=window, text='', font=('Fixedsys', 15), width=170, height=40, corner_radius=5, fg_color=(white, gray))
 warning.place(x=275, y=440, anchor=CENTER)
 
-# Função da url
-def url(event):
-    webbrowser.open_new('https://github.com/Dimitri-Matheus')
-
-warning_time_update = None
-# A função para ficar mudando a mensagem
-def warning_time(label, interval):
-    global status, warning_time_update
-
-    if status == 'default':
-        label.configure(text="Créditos: Dimitri", text_color=(gray, white))
-        label.unbind('<Button-1>')
-        status = 'theme' #Mudança da variável status 1
-
-    elif status == 'theme':
-        label.configure(text="Altere a aparência da sua pokedex!")
-        status = 'github' #Mudança da variável status 2
-
-    elif status == 'github':
-        label.configure(text="Se você gostou do meu projeto me siga no github!")
-        status = 'link' #Mudança da variável status 3
-
-    elif status == 'link':
-        label.configure(text='GITHUB')
-        label.bind('<Button-1>', url)
-        status = 'default' #Mudança da variável status 1
-
-    warning_time_update = window.after(interval, warning_time, label, interval)
-
-
-# Configuração do tempo determinado
-warning_time(warning, 7000)
+# Configuração do status da mensagem e seu tempo
+def notification_set(label, interval):
+    global status, notification_update
+    status = notification_change(label, status)
+    notification_update = window.after(interval, notification_set, label, interval)
+notification_set(warning, 7000)
 
 # A validação do enter
 def validate_enter(event):
@@ -192,10 +129,11 @@ def reset_values():
     pokemon_type.configure(text='Digite o nome ou id do seu pokemon!')
     pokemon_id.configure(text='')
     pokemon_image.configure(image=pokeball, text='')
-    warning_time(warning, 7000)
+    notification_set(warning, 7000)
     search.delete(0, 'end')
 
 reset_button = customtkinter.CTkButton(master=window, text='Redefinir', font=('Fixedsys', 10), fg_color=red, hover_color=value, command=reset_values)
 reset_button.place(x=275, y=390, anchor=CENTER)
+
 
 window.mainloop()
