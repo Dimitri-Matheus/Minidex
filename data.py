@@ -1,9 +1,12 @@
 # Módulos
 import customtkinter
 from tkinter import *
+import tkinter as tk
+from tkinter import messagebox
 import PIL.Image, PIL.ImageTk
 import pickle
 import webbrowser
+
 
 # Sistema de temas
 def change_theme(value):
@@ -36,6 +39,12 @@ def load_cache():
             global image_cache
             image_cache = pickle.load(handle)
             print("Cache carregado com sucesso!")
+            window_2 = customtkinter.CTkToplevel()
+            window_2.title('ERRO')
+            window_2.geometry("300x80")
+            window_2.resizable(width=False, height=False)
+            label = customtkinter.CTkLabel(window_2, text='ERRO AO CARREGAR O CACHE :/')
+            label.pack(side="center", fill="both", expand=True, padx=40, pady=40)
             return image_cache
     except FileNotFoundError:
         print("Arquivo de cache não encontrado, criando um novo...")
@@ -59,23 +68,19 @@ def notification_change(label, status):
     if status == 'default':
         label.configure(text="Créditos: Dimitri")
         label.unbind('<Button-1>')
-        print('msg 1')
         status = 'theme' #Mudança da variável status 1
 
     elif status == 'theme':
         label.configure(text="Altere a aparência da sua pokedex!")
-        print('msg 2')
         status = 'github' #Mudança da variável status 2
 
     elif status == 'github':
         label.configure(text="Se você gostou do meu projeto me siga no github!")
-        print('msg 3')
         status = 'link' #Mudança da variável status 3
 
     elif status == 'link':
         label.configure(text='GITHUB')
         label.bind('<Button-1>', url)
-        print('msg 4')
         status = 'default' #Mudança da variável status 1
 
     return status
