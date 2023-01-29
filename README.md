@@ -35,8 +35,8 @@ Este programa é uma reescrita do projeto **pokedex-python** para uma versão mo
 - Instale o Custom Tkinter 🗡️ `pip3 install customtkinter`
 - Instale o Pypokedex 🗡️ `pip install pypokedex`
 - Instale o URLlib3 🗡️ `pip install urllib3`
-- Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina
+- Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina.
 
 ## Aplicativo:
-- Falta anexar!
+- EM BREVE!
 ---
