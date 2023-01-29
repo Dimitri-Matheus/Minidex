@@ -34,7 +34,6 @@ def save_cache():
 # Carregar o cache
 def load_cache():
     global image_cache
-
     try:
         with open('image_cache.pickle', 'rb') as handle:
             global image_cache
@@ -42,7 +41,7 @@ def load_cache():
             print("Cache carregado com sucesso!")
             return image_cache
     except FileNotFoundError:
-        open_error_window('Arquivo de cache não encontrado, renicie o programa!')
+        open_error_window('Arquivo de cache não encontrado, reinicie o programa!')
         image_cache = {}
         save_cache()
     except:

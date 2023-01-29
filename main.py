@@ -126,7 +126,7 @@ button_load.place(x=275, y=350, anchor=CENTER)
 # Criando o reset de valores
 def reset_values():
     pokemon_name.configure(text='Pokedex Modern')
-    pokemon_type.configure(text='Digite o nome ou id do seu pokemon!')
+    pokemon_type.configure(text='Digite o nome ou id do seu Pokémon!')
     pokemon_id.configure(text='')
     pokemon_image.configure(image=pokeball, text='')
     notification_set(warning, 7000)
