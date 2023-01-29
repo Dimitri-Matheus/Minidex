@@ -1,8 +1,5 @@
-# Pokedex Moderna
-Uma pokedex feita usando a linguagem python 🐍
-
-## Descrição:
- Uma reescrita do código Pokedex-Python para uma versão moderna e melhor.
+# Pokédex Moderna
+Este programa é uma reescrita do projeto **pokedex-python** para uma versão moderna e melhorada.
 
 ## O que eu usei nesse projeto:
 - Interface.
@@ -31,14 +28,14 @@ Uma pokedex feita usando a linguagem python 🐍
 
 🟧 [Urllib3](https://pypi.org/project/urllib3/)
 
-⬛ Outras: tkinter, pickle, webbrowser, urllib.request, io
+⬜ Outros: tkinter, pickle, webbrowser, urllib.request, io
 
 ## Instalação:
-- Instale o Pillow 🗡️ ` pip install Pillow`
-- Instale o Custom Tkinter 🗡️ ` pip3 install customtkinter`
-- Instale O Pypokedex 🗡️ `pip install pypokedex`
+- Instale o Pillow 🗡️ `pip install Pillow`
+- Instale o Custom Tkinter 🗡️ `pip3 install customtkinter`
+- Instale o Pypokedex 🗡️ `pip install pypokedex`
 - Instale o URLlib3 🗡️ `pip install urllib3`
-- Clone esse [repositório]() na sua máquina
+- Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina
 
 ## Aplicativo:
 - Falta anexar!
