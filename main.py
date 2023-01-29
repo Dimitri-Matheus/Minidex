@@ -41,7 +41,7 @@ theme.configure(dropdown_font=('Fixedsys', 5), corner_radius=5)
 theme.place(x=10, y=485, anchor=W)
 
 # Local das imagens
-pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/pokeball/Pokeball.png"), size=(100, 100))
+pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/images/Pokeball.png"), size=(100, 100))
 pokemon_image = customtkinter.CTkLabel(master=frame_pokemon, text='', image=pokeball)
 pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
