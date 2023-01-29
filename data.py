@@ -30,6 +30,7 @@ def save_cache():
         pickle.dump(image_cache, handle)
         print('Cache salvo com sucesso!')
 
+
 # Carregar o cache
 def load_cache():
     global image_cache
@@ -39,20 +40,15 @@ def load_cache():
             global image_cache
             image_cache = pickle.load(handle)
             print("Cache carregado com sucesso!")
-            window_2 = customtkinter.CTkToplevel()
-            window_2.title('ERRO')
-            window_2.geometry("300x80")
-            window_2.resizable(width=False, height=False)
-            label = customtkinter.CTkLabel(window_2, text='ERRO AO CARREGAR O CACHE :/')
-            label.pack(side="center", fill="both", expand=True, padx=40, pady=40)
             return image_cache
     except FileNotFoundError:
-        print("Arquivo de cache não encontrado, criando um novo...")
+        open_error_window('Arquivo de cache não encontrado, renicie o programa!')
         image_cache = {}
         save_cache()
     except:
-        print("Ocorreu um erro ao carregar o cache.")
+        open_error_window('ERRO AO CARREGAR O CACHE :/')
         return {}
+
 
 # Sistema do aviso interativo
 notification_update = None
@@ -84,4 +80,24 @@ def notification_change(label, status):
         status = 'default' #Mudança da variável status 1
 
     return status
+
+
+# Sistema de erro
+def open_error_window(message):
+
+    # Janela de erro
+    window_2 = customtkinter.CTkToplevel()
+    window_2.title('Atenção')
+    window_2.resizable(width=False, height=False)
+    window_2.geometry("470x90")
+
+    # A mensagem do erro
+    msg_erro = customtkinter.CTkLabel(master=window_2, text=message, font=('Fixedsys', 10), text_color=('#ef5350'))
+    msg_erro.pack(side='top', fill="both", expand=False, padx=20, pady=10)
+
+    # O botão para sair
+    exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', hover_color='#38576b', command=window_2.destroy)
+    exit.place(relx=0.5, rely=0.7, anchor=CENTER)
+
+    window_2.mainloop()
 
