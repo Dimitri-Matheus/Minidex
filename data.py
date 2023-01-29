@@ -2,8 +2,7 @@
 import customtkinter
 from tkinter import *
 import tkinter as tk
-from tkinter import messagebox
-import PIL.Image, PIL.ImageTk
+from PIL import Image, ImageTk
 import pickle
 import webbrowser
 
@@ -45,7 +44,7 @@ def load_cache():
         image_cache = {}
         save_cache()
     except:
-        open_error_window('ERRO AO CARREGAR O CACHE :/')
+        open_error_window('ERRO AO CARREGAR O CACHE!')
         return {}
 
 
@@ -88,15 +87,23 @@ def open_error_window(message):
     window_2 = customtkinter.CTkToplevel()
     window_2.title('Atenção')
     window_2.resizable(width=False, height=False)
-    window_2.geometry("470x90")
+    window_2.geometry("450x180")
+
+    # Carregando a imagem
+    pikachu_image = customtkinter.CTkImage(Image.open('C:/Users/dimit/Documents/GitHub/Pokedex-Modern/images/pikachu_attention.png'), size=(100, 100))
+
+    # Adicionando a imagem ao programa
+    pikachu_place = customtkinter.CTkLabel(master=window_2, image=pikachu_image, text='')
+    pikachu_place.pack(padx=10, pady=0.1)
 
     # A mensagem do erro
     msg_erro = customtkinter.CTkLabel(master=window_2, text=message, font=('Fixedsys', 10), text_color=('#ef5350'))
-    msg_erro.pack(side='top', fill="both", expand=False, padx=20, pady=10)
+    msg_erro.pack(padx=10, pady=0.3)
 
     # O botão para sair
     exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', hover_color='#38576b', command=window_2.destroy)
-    exit.place(relx=0.5, rely=0.7, anchor=CENTER)
+    exit.pack(padx=10, pady=10)
+
 
     window_2.mainloop()
 
