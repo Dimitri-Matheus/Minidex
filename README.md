@@ -9,13 +9,13 @@ Este programa é uma reescrita do projeto **pokedex-python** para uma versão mo
 - Bibliotecas.
 
 ## O que há de novo?
-1. Nova interface moderna
-2. Aplicativo para computador
-3. Geração de pokémons
-4. Sistema de temas
-5. Sistema de cache
-6. Sistema de erros
-7. Aviso interativo
+- Nova interface moderna
+- Aplicativo para computador
+- Geração de pokémons
+- Sistema de temas
+- Sistema de cache
+- Sistema de erros
+- Aviso interativo
 
 ## Tecnologias utilizadas:
 🟩 [Python](https://www.python.org/)
@@ -31,12 +31,14 @@ Este programa é uma reescrita do projeto **pokedex-python** para uma versão mo
 ⬜ Outros: tkinter, pickle, webbrowser, urllib.request, io
 
 ## Instalação:
-- Instale o Pillow 🗡️ `pip install Pillow`
-- Instale o Custom Tkinter 🗡️ `pip3 install customtkinter`
-- Instale o Pypokedex 🗡️ `pip install pypokedex`
-- Instale o URLlib3 🗡️ `pip install urllib3`
-- Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina.
+1. Instale o Pillow 🗡️ `pip install Pillow`
+2. Instale o Custom Tkinter 🗡️ `pip3 install customtkinter`
+3. Instale o Pypokedex 🗡️ `pip install pypokedex`
+4. Instale o URLlib3 🗡️ `pip install urllib3`
+5. Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina.
 
 ## Aplicativo:
-- EM BREVE!
+- 👉 Aqui está o aplicativo para computador [Lançamentos](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases)
+
+- 👉 Se você quiser contribuir melhorando o código pode se informar através desse repositório.
 ---
