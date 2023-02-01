@@ -39,7 +39,6 @@ Este programa é uma reescrita do projeto **pokedex-python** para uma versão mo
 
 ## Aplicativo:
 🗡︎ Aqui está o aplicativo para computador [Lançamentos](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases)
-#
 
 ### ⚙ Se você quiser contribuir melhorando o código pode se informar através desse repositório.
 ---
