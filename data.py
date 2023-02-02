@@ -48,7 +48,7 @@ def load_cache():
         return {}
 
 
-# Sistema do aviso interativo
+# Sistema da notificação interativa
 notification_update = None
 status = 'default'
 
@@ -82,7 +82,7 @@ def notification_change(label, status):
 
 # Sistema de erro
 def open_error_window(message):
-
+    
     # Janela de erro
     window_2 = customtkinter.CTkToplevel()
     window_2.title('Atenção')
@@ -104,6 +104,4 @@ def open_error_window(message):
     exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', hover_color='#38576b', command=window_2.destroy)
     exit.pack(padx=10, pady=10)
 
-
     window_2.mainloop()
-
