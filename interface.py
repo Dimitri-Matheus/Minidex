@@ -105,7 +105,7 @@ class App(customtkinter.CTk):
                     pokemon = pypokedex.get(name=sprite)
                 except:
                     pokemon = pypokedex.get(id=sprite)
-                self.notification.configure(text=f'O {pokemon.name} foi encontradocom sucesso na database!'.upper())
+                self.notification.configure(text=f'O {pokemon.name} foi encontrado com sucesso na database!'.upper())
 
                 pokemon_url = pokemon.sprites.front.get('default')
 
