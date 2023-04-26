@@ -24,13 +24,14 @@ class App(customtkinter.CTk):
         super().__init__()
 
         # Personalizando a janela
+        #self.configure(fg_color='') mudar a cor do segundo layout
         self.title('Pokedex')
         self.geometry('550x510')
         self.resizable(width=False, height=False)
         ttk.Separator(master=self, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
 
         # Configuração do tema padrão
-        customtkinter.set_default_color_theme('green')
+        customtkinter.set_default_color_theme('themes/default.json')
         self.theme_default = customtkinter.StringVar(value='Sistema')
 
         # Frame do pokemon
@@ -43,18 +44,18 @@ class App(customtkinter.CTk):
         self.pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
         # Nome
-        self.pokemon_name = customtkinter.CTkLabel(master=self.frame_pokemon, text='Pokedex Modern', font=('Fixedsys', 27), text_color=(gray, white))
+        self.pokemon_name = customtkinter.CTkLabel(master=self.frame_pokemon, text='Pokedex Modern', font=('Fixedsys', 27))
         self.pokemon_name.place(relx=0.5, rely=0.1, anchor=CENTER)
 
         # Tipo
-        self.pokemon_type = customtkinter.CTkLabel(master=self.frame_pokemon, text='Digite o nome ou id do seu pokemon!', font=('Fixedsys', 21), text_color=(gray, white))
+        self.pokemon_type = customtkinter.CTkLabel(master=self.frame_pokemon, text='Digite o nome ou id do seu pokemon!', font=('Fixedsys', 21))
         self.pokemon_type.place(relx=0.5, rely=0.2, anchor=CENTER)
 
         # ID
-        self.pokemon_id = customtkinter.CTkLabel(master=self.frame_pokemon, text='', font=('Fixedsys', 21), text_color=(gray, white))
+        self.pokemon_id = customtkinter.CTkLabel(master=self.frame_pokemon, text='', font=('Fixedsys', 21))
         self.pokemon_id.place(relx=0.5, rely=0.3, anchor=CENTER)
 
-        # Validando o enter
+        # Funcionamento da tecla enter
         def validate_enter(event):
             load_pokemon(size=(150, 150))
         
@@ -65,7 +66,7 @@ class App(customtkinter.CTk):
         self.search.bind('<Return>', validate_enter)
 
         # Botão de procurar pokemons
-        self.button_load = customtkinter.CTkButton(master=self, width=120, height=32,text='Carregar Pokemon', font=('Fixedsys', 10), hover_color=value, command=lambda: load_pokemon(size=(150, 150)))
+        self.button_load = customtkinter.CTkButton(master=self, width=120, height=32,text='Carregar Pokemon', font=('Fixedsys', 10), command=lambda: load_pokemon(size=(150, 150)))
         self.button_load.grid(row=3, column=0, sticky='s', padx=10, pady=5)
 
         # Adicionando o reset de valores
@@ -79,7 +80,7 @@ class App(customtkinter.CTk):
 
 
         # Botão de redefinir o programa
-        self.reset_button = customtkinter.CTkButton(master=self, text='Redefinir', font=('Fixedsys', 10), fg_color=red, hover_color=value, command=reset_values)
+        self.reset_button = customtkinter.CTkButton(master=self, text='Redefinir', font=('Fixedsys', 10), fg_color=red, command=reset_values)
         self.reset_button.grid(row=4, column=0, sticky='s', padx=10, pady=5)
 
         # Local da notificação
@@ -88,7 +89,6 @@ class App(customtkinter.CTk):
 
         # Menu de opções dos temas
         self.theme = customtkinter.CTkOptionMenu(master=self, values=['Sistema', 'Escuro', 'Claro'], command=change_theme, variable=self.theme_default, font=('Fixedsys', 10))
-        self.theme.configure(button_color=(white, gray), button_hover_color=(silver, letter), text_color=(gray, white), fg_color=(white, gray))
         self.theme.configure(dropdown_font=('Fixedsys', 5), corner_radius=5)
         self.theme.grid(row=6, column=0, sticky='sw', padx=10, pady=40)
 

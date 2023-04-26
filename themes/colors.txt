@@ -1,0 +1,30 @@
+Colors Flamingo Theme
+White - #FFFFFF
+Black - #000000
+Gray - #343638
+----------------------------------------------------------------
+Nosegay - #FFE3E8 
+https://colorfuldots.com/color/ffe3e8
+
+Charming Cherry - #FF8BA0 
+https://colorfuldots.com/color/ff8ba0
+
+Poodle Skirt - #FFB0BE
+https://colorfuldots.com/color/ffb0be
+
+Brink Pink - #F5607D 
+https://colorfuldots.com/color/f5607d
+
+Young Salmon - #FFB5B6 
+https://colorfuldots.com/color/ffb5b6
+
+Colors Default Theme
+White - #FEFFFF
+Black - #444466
+Gray - #333432
+Silver - #D1D1D1
+----------------------------------------------------------------
+Blue - #6F9FBD
+Red - #EF5350
+Value - #38576b
+Letter - #403d3d

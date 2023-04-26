@@ -90,7 +90,7 @@ def open_error_window(message):
     window_2.geometry("450x180")
 
     # Carregando a imagem
-    pikachu_image = customtkinter.CTkImage(Image.open('C:/Users/dimit/Documents/GitHub/Pokedex-Modern/images/pikachu_attention.png'), size=(100, 100))
+    pikachu_image = customtkinter.CTkImage(Image.open('images/pikachu_attention.png'), size=(100, 100))
 
     # Adicionando a imagem ao programa
     pikachu_place = customtkinter.CTkLabel(master=window_2, image=pikachu_image, text='')
@@ -101,7 +101,7 @@ def open_error_window(message):
     msg_erro.pack(padx=10, pady=0.3)
 
     # O botão para sair
-    exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', hover_color='#38576b', command=window_2.destroy)
+    exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', command=window_2.destroy)
     exit.pack(padx=10, pady=10)
 
     window_2.mainloop()
