@@ -38,7 +38,7 @@ class App(customtkinter.CTk):
         self.frame_pokemon.grid(row=1, column=0)
 
         # Local das imagens
-        self.pokeball = customtkinter.CTkImage(PIL.Image.open("C:/Users/dimit/Documents/GitHub/Pokedex-Modern/images/Pokeball.png"), size=(100, 100))
+        self.pokeball = customtkinter.CTkImage(PIL.Image.open('images/Pokeball.png'), size=(100, 100))
         self.pokemon_image = customtkinter.CTkLabel(master=self.frame_pokemon, text='', image=self.pokeball)
         self.pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
@@ -145,7 +145,7 @@ class App(customtkinter.CTk):
     # Adicionando o icone
     def iconbitmap(self, bitmap):
         self._iconbitmap_method_called = False
-        super().wm_iconbitmap('C:/Users/dimit/Documents/GitHub/Pokedex-Modern/images/Pokedex.ico')
+        super().wm_iconbitmap('images/Pokedex.ico')
 
 
 if __name__ == "__main__":
