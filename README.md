@@ -1,6 +1,6 @@
 # Minidex
 
-É uma Pokedex open-source escrita em **python** que permite ao usuário pesquisar e obter informações sobre os Pokémon. Recentemente, o projeto passou por uma reescrita de código para uma versão melhorada e mais bonita. A nova versão do Minidex apresenta uma interface de usuário mais moderna e intuitiva, além de possuir novas funcionalidades que tornam a experiência do usuário ainda melhor.
+É uma **Pokedex open-source** escrita em python que permite ao usuário pesquisar e obter informações sobre os Pokémon. Recentemente, o projeto passou por uma reescrita de código para uma versão melhorada e mais bonita. A nova versão do Minidex apresenta uma interface de usuário mais moderna e intuitiva, além de possuir novas funcionalidades que tornam a experiência do usuário ainda melhor.
 
 ---
 
