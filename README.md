@@ -35,7 +35,7 @@ Para executar a aplicação, é necessário ter instalado o Python 3 e as seguin
 1. Clone o [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) ou faça o [download](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases) do aplicativo
 2. Instale as bibliotecas necessárias com os seguintes comandos:
 
-![image](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/233de37e-b406-45b2-a830-3efcac780b7b)
+![carbon](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/5f59cf6b-8c42-4af1-935d-0653ea269006)
 
 
 ### O que há de novo?
