@@ -6,8 +6,6 @@
 
 ---
 
----
-
 ## Funcionalidades
 
 - Pesquisar informações sobre um Pokémon específico pelo nome ou ID
@@ -20,7 +18,7 @@
 
 Para executar a aplicação, é necessário ter instalado o Python 3 e as seguintes bibliotecas:
 
-[🟢 `Python`](https://www.python.org/)
+[🟢](https://www.python.org/) `Python`
 
 [🟣](https://pypi.org/project/Pillow/) `Pillow`
 
@@ -61,5 +59,3 @@ Contribuições são bem-vindas! Se você quiser contribuir para este projeto, a
 Este projeto foi desenvolvido por Dimitri e utiliza a Pypokedex como fonte de dados. O design da aplicação foi inspirado na interface da Pokedex dos jogos de Pokémon.
 
 ---
-
-?descriptionFromFileType=function+toLocaleUpperCase()+{+[native+code]+}+File&mimeType=application/octet-stream&fileName=Project.md&fileType=undefined&fileExtension=md
