@@ -1,37 +1,65 @@
+# Project
+
 # Minidex
-Este programa é uma reescrita do projeto **pokedex-python** para uma versão moderna e melhorada.
 
-## O que eu usei nesse projeto:
-- Interface.
-- Funções.
-- Modularização.
-- Bibliotecas.
+É uma Pokedex open-source escrita em **python** que permite ao usuário pesquisar e obter informações sobre os Pokémon. Recentemente, o projeto passou por uma reescrita de código para uma versão melhorada e mais bonita. A nova versão do Minidex apresenta uma interface de usuário mais moderna e intuitiva, além de possuir novas funcionalidades que tornam a experiência do usuário ainda melhor.
 
-## O que há de novo?
-- Nova interface moderna
-- Aplicativo para computador
-- Geração de pokémons
-- Sistema de temas
-- Sistema de cache
-- Sistema de erros
-- Aviso interativo
-
-## Tecnologias utilizadas:
-[🟢](https://www.python.org/) - [🟣](https://pypi.org/project/Pillow/) - [🟡](https://pypi.org/project/urllib3/) - [🔴](https://github.com/arnavb/pypokedex) - [🔵](https://github.com/TomSchimansky/CustomTkinter) - ⚪
-
-
-### Legenda
-🟢 `Python` 🟣 `Pillow` 🟡 `Urllib3` 🔴 `Pypokedex` 🔵 `Custom Tkinter` ⚪ `tkinter, pickle, webbrowser, urllib.request e io.`
-
-## Instalação:
-1. Instale a biblioteca Pillow 🗡️ `pip install Pillow`
-2. Instale a biblioteca Custom Tkinter 🗡️ `pip3 install customtkinter`
-3. Instale a biblioteca Pypokedex 🗡️ `pip install pypokedex`
-4. Instale a biblioteca URLlib3 🗡️ `pip install urllib3`
-5. Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina.
-
-## Aplicativo:
-#### ⚔️ Aqui está o aplicativo para computador [Lançamentos](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases)
-
-#### ⚙ Caso você queria contribuir com esse projeto pode me informar através desse repositório.
 ---
+
+---
+
+## Funcionalidades
+
+- Pesquisar informações sobre um Pokémon específico pelo nome ou ID
+- Exibir informações gerais de um Pokémon e seu tipo
+- Exibir a imagem oficial de um Pokémon em pixel art
+
+---
+
+## Requisitos
+
+Para executar a aplicação, é necessário ter instalado o Python 3 e as seguintes bibliotecas:
+
+[🟢 `Python`](https://www.python.org/)
+
+[🟣](https://pypi.org/project/Pillow/) `Pillow`
+
+[🟡](https://pypi.org/project/urllib3/) `Urllib3`
+
+[🔴](https://github.com/arnavb/pypokedex) `Pypokedex`
+
+[🔵](https://github.com/TomSchimansky/CustomTkinter) `Custom Tkinter`
+
+⚪️`tkinter, pickle, webbrowser, urllib.request e io.`
+
+---
+
+## Como executar
+
+1. Clone o [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) ou faça o [download](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases) do aplicativo
+2. Instale as bibliotecas necessárias com os seguintes comandos:
+
+![carbon.png](https://res.craft.do/user/full/99febbde-991f-0e46-0b3e-2ef8a021c90f/doc/44958a93-76f9-4659-9dbe-45c0655d921f/6918611c-3e6e-4344-befd-89be14b7db80)
+
+### O que há de novo?
+
++ **Changelog**
+   - Nova interface moderna
+   - Aplicativo para computador
+   - Modo escuro e claro
+   - Sistema de cache
+   - Aviso interativo
+
+---
+
+## Contribuindo
+
+Contribuições são bem-vindas! Se você quiser contribuir para este projeto, abra uma nova issue para discutir sua ideia ou envie um pull request com as alterações propostas.
+
+## Créditos
+
+Este projeto foi desenvolvido por Dimitri e utiliza a Pypokedex como fonte de dados. O design da aplicação foi inspirado na interface da Pokedex dos jogos de Pokémon.
+
+---
+
+?descriptionFromFileType=function+toLocaleUpperCase()+{+[native+code]+}+File&mimeType=application/octet-stream&fileName=Project.md&fileType=undefined&fileExtension=md
