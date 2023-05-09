@@ -1,37 +1,32 @@
 # Minidex
-Este programa é uma reescrita do projeto **pokedex-python** para uma versão moderna e melhorada.
+É uma Pokedex open-source escrita em python que permite ao usuário pesquisar e obter informações sobre os Pokémon. Recentemente, o projeto passou por uma reescrita de código para uma versão melhorada e mais bonita. A nova versão do Minidex apresenta uma interface de usuário mais moderna e intuitiva, além de possuir novas funcionalidades que tornam a experiência do usuário ainda melhor.
 
-## O que eu usei nesse projeto:
-- Interface.
-- Funções.
-- Modularização.
-- Bibliotecas.
-
-## O que há de novo?
-- Nova interface moderna
-- Aplicativo para computador
-- Geração de pokémons
-- Sistema de temas
-- Sistema de cache
-- Sistema de erros
-- Aviso interativo
-
-## Tecnologias utilizadas:
-[🟢](https://www.python.org/) - [🟣](https://pypi.org/project/Pillow/) - [🟡](https://pypi.org/project/urllib3/) - [🔴](https://github.com/arnavb/pypokedex) - [🔵](https://github.com/TomSchimansky/CustomTkinter) - ⚪
-
-
-### Legenda
-🟢 `Python` 🟣 `Pillow` 🟡 `Urllib3` 🔴 `Pypokedex` 🔵 `Custom Tkinter` ⚪ `tkinter, pickle, webbrowser, urllib.request e io.`
-
-## Instalação:
-1. Instale a biblioteca Pillow 🗡️ `pip install Pillow`
-2. Instale a biblioteca Custom Tkinter 🗡️ `pip3 install customtkinter`
-3. Instale a biblioteca Pypokedex 🗡️ `pip install pypokedex`
-4. Instale a biblioteca URLlib3 🗡️ `pip install urllib3`
-5. Clone este [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) na sua máquina.
-
-## Aplicativo:
-#### ⚔️ Aqui está o aplicativo para computador [Lançamentos](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases)
-
-#### ⚙ Caso você queria contribuir com esse projeto pode me informar através desse repositório.
 ---
+
+## Funcionalidades
+- Pesquisar informações sobre um Pokémon específico pelo nome ou ID
+- Exibir informações gerais de um Pokémon e seu tipo
+- Exibir a imagem oficial de um Pokémon em pixel art
+***
+
+## Requisitos
+Para executar a aplicação, é necessário ter instalado o Python 3 e as seguintes bibliotecas:
+
+[🟢](https://www.python.org/) `Python`
+
+🟣 `Pillow`
+
+🟡 `Urllib3`
+
+🔴 `Pypokedex`
+
+🔵 `Custom Tkinter`
+
+⚪️ `tkinter, pickle, webbrowser, urllib.request e io`
+***
+
+## Como executar
+1. Clone o repositório ou faça o download do aplicativo
+2. Instale as bibliotecas necessárias com os seguintes comandos:
+
+![carbon](https://user-images.githubusercontent.com/121637762/236990592-5cd822b6-6734-41fb-a6ac-749d951e2585.png)
