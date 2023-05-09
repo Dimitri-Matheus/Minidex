@@ -26,7 +26,7 @@ Para executar a aplicação, é necessário ter instalado o Python 3 e as seguin
 
 [🔵](https://github.com/TomSchimansky/CustomTkinter) `Custom Tkinter`
 
-⚪️`tkinter, pickle, webbrowser, urllib.request e io.`
+⚪️ `tkinter, pickle, webbrowser, urllib.request e io`
 
 ---
 
