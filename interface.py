@@ -9,14 +9,9 @@ import PIL.Image, PIL.ImageTk
 from data import change_theme, save_cache, load_cache, notification_change, notification_update, status
 
 # Cores
-black = '#444466'
 white = '#feffff'
-blue = '#6f9fbd'
-red = '#ef5350'
 gray = '#333432'
-silver = '#D1D1D1'
-value = '#38576b'
-letter = '#403d3d'
+red = '#ef5350'
 
 # A janela
 class App(customtkinter.CTk):
@@ -25,13 +20,13 @@ class App(customtkinter.CTk):
 
         # Personalizando a janela
         #self.configure(fg_color='') mudar a cor do segundo layout
-        self.title('Pokedex')
+        self.title('Minidex')
         self.geometry('550x510')
         self.resizable(width=False, height=False)
         ttk.Separator(master=self, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
 
         # Configuração do tema padrão
-        customtkinter.set_default_color_theme('themes/default.json')
+        customtkinter.set_default_color_theme('themes/standard.json') # Themes: "standard", "flamingo"
         self.theme_default = customtkinter.StringVar(value='Sistema')
 
         # Frame do pokemon
@@ -44,11 +39,11 @@ class App(customtkinter.CTk):
         self.pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
         # Nome
-        self.pokemon_name = customtkinter.CTkLabel(master=self.frame_pokemon, text='Pokedex Modern', font=('Fixedsys', 27))
+        self.pokemon_name = customtkinter.CTkLabel(master=self.frame_pokemon, text='Minidex', font=('Fixedsys', 27))
         self.pokemon_name.place(relx=0.5, rely=0.1, anchor=CENTER)
 
         # Tipo
-        self.pokemon_type = customtkinter.CTkLabel(master=self.frame_pokemon, text='Digite o nome ou id do seu pokemon!', font=('Fixedsys', 21))
+        self.pokemon_type = customtkinter.CTkLabel(master=self.frame_pokemon, text='Digite o nome ou id do seu Pokémon!', font=('Fixedsys', 21))
         self.pokemon_type.place(relx=0.5, rely=0.2, anchor=CENTER)
 
         # ID
@@ -71,7 +66,7 @@ class App(customtkinter.CTk):
 
         # Adicionando o reset de valores
         def reset_values():
-            self.pokemon_name.configure(text='Pokedex Modern')
+            self.pokemon_name.configure(text='Minidex')
             self.pokemon_type.configure(text='Digite o nome ou id do seu Pokémon!')
             self.pokemon_id.configure(text='')
             self.pokemon_image.configure(image=self.pokeball, text='')
