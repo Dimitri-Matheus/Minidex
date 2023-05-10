@@ -13,10 +13,13 @@
 ---
 
 ## Preview
-![dark](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/cfca4897-8841-4d24-8179-7ba3aaebbe67)
-![light](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/3409d4ed-0375-4c71-8112-4d006991a549)
+<div>
+  <div style="display: inline_block"><br>
+  <img align="center" alt="dark" height="400" style="border-radius:10px;" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/cfca4897-8841-4d24-8179-7ba3aaebbe67"></a>
+  <img align="right" alt="light" height="400" style="border-radius:10px;" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/3409d4ed-0375-4c71-8112-4d006991a549"></a>
+</div>
 
----
+#
 
 ## Requisitos
 
