@@ -34,7 +34,7 @@ class App(customtkinter.CTk):
         self.frame_pokemon.grid(row=1, column=0)
 
         # Local das imagens
-        self.pokeball = customtkinter.CTkImage(PIL.Image.open('images/Pokeball.png'), size=(100, 100))
+        self.pokeball = customtkinter.CTkImage(PIL.Image.open('images/Bag_Ball.png'), size=(100, 100)) # Images: "Bag_Ball", "Bag_Great", "Bag_Ultra", "Bag_Dream"
         self.pokemon_image = customtkinter.CTkLabel(master=self.frame_pokemon, text='', image=self.pokeball)
         self.pokemon_image.place(relx=0.5, rely=0.6, anchor=CENTER)
 
