@@ -12,6 +12,12 @@
 
 ---
 
+## Preview
+![dark](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/cfca4897-8841-4d24-8179-7ba3aaebbe67)
+![light](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/3409d4ed-0375-4c71-8112-4d006991a549)
+
+---
+
 ## Requisitos
 
 Para executar a aplicação, é necessário ter instalado o Python 3 e as seguintes bibliotecas:
@@ -35,7 +41,7 @@ Para executar a aplicação, é necessário ter instalado o Python 3 e as seguin
 1. Clone o [repositório](https://github.com/Dimitri-Matheus/Pokedex-Modern) ou faça o [download](https://github.com/Dimitri-Matheus/Pokedex-Modern/releases) do aplicativo
 2. Instale as bibliotecas necessárias com os seguintes comandos:
 
-![carbon](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/5f59cf6b-8c42-4af1-935d-0653ea269006)
+![code](https://github.com/Dimitri-Matheus/Minidex/assets/121637762/5f59cf6b-8c42-4af1-935d-0653ea269006)
 
 
 ### O que há de novo?
@@ -57,4 +63,4 @@ Contribuições são bem-vindas! Se você quiser contribuir para este projeto, a
 
 Este projeto foi desenvolvido por Dimitri e utiliza a Pypokedex como fonte de dados. O design da aplicação foi inspirado na interface da Pokedex dos jogos de Pokémon.
 
----
+***
