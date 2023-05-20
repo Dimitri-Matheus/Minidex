@@ -1,8 +1,11 @@
-# Minidex
+<h1 align="center">Minidex</h1>
 
-This is an **open-source Pokedex** written in Python that allows users to search and obtain information about Pokemon. Recently, the project underwent a code rewrite for an improved and more beautiful version. The new version of Minidex features a more modern and intuitive user interface, as well as new functionalities that make the user experience even better.
-
----
+<h3 align="center">
+	<img src="https://github.com/Dimitri-Matheus/Dimitri-Matheus/assets/121637762/03ec39d0-9d1a-44cd-ba83-825681a44c3f" width="250" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	This is an open-source Pokedex written in Python that provides information about Pokemon. It has been recently updated with improved user interface and new features for a better user experience.
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+</h3>
 
 ## Features
 
@@ -13,11 +16,10 @@ This is an **open-source Pokedex** written in Python that allows users to search
 ---
 
 ## Preview
-<div>
-  <div style="display: inline_block"><br>
-  <img align="center" alt="dark" height="400" style="border-radius:10px;" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/cfca4897-8841-4d24-8179-7ba3aaebbe67"></a>
-  <img align="center" alt="light" height="400" style="border-radius:10px;" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/3409d4ed-0375-4c71-8112-4d006991a549"></a>
-</div>
+<p align="center">
+  <img alt="dark" height="400" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/cfca4897-8841-4d24-8179-7ba3aaebbe67"/>
+  <img alt="light" height="400" src="https://github.com/Dimitri-Matheus/Minidex/assets/121637762/3409d4ed-0375-4c71-8112-4d006991a549"/>
+</p>
 
 #
 
@@ -47,13 +49,14 @@ To run the application, you need to have Python 3 installed and the following li
 
 
 ### What's New?
-
-+ **Changelog**
-   - New modern interface
-   - Desktop application
-   - Dark and light mode
-   - Interactive notice
-   - Cache system
+<details>
+<summary><h4>Changelog</h4></summary>
+- New modern interface<br>
+- Desktop application<br>
+- Dark and light mode<br>
+- Interactive notice<br>
+- Cache system</br>
+</details>
 
 ---
 
