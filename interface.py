@@ -19,14 +19,14 @@ class App(customtkinter.CTk):
         super().__init__()
 
         # Personalizando a janela
-        #self.configure(fg_color='') mudar a cor do segundo layout
+        #self.configure(fg_color='') muda a cor do segundo layout
         self.title('Minidex')
         self.geometry('550x510')
         self.resizable(width=False, height=False)
         ttk.Separator(master=self, orient="horizontal").grid(row=0, columnspan=1, ipadx=274)
 
         # Configuração do tema padrão
-        customtkinter.set_default_color_theme('themes/standard.json') # Themes: "standard", "flamingo"
+        customtkinter.set_default_color_theme('themes/standard.json')
         self.theme_default = customtkinter.StringVar(value='Sistema')
 
         # Frame do pokemon
@@ -140,7 +140,7 @@ class App(customtkinter.CTk):
     # Adicionando o icone
     def iconbitmap(self, bitmap):
         self._iconbitmap_method_called = False
-        super().wm_iconbitmap('images/Pokedex.ico')
+        super().wm_iconbitmap('images/icon.ico')
 
 
 if __name__ == "__main__":

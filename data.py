@@ -69,7 +69,7 @@ def notification_change(label, status):
         status = 'github' #Mudança da variável status 2
 
     elif status == 'github':
-        label.configure(text="Se você gostou do meu projeto me siga no github!")
+        label.configure(text="Se você gostou do meu projeto me siga no github :)")
         status = 'link' #Mudança da variável status 3
 
     elif status == 'link':
@@ -90,11 +90,11 @@ def open_error_window(message):
     window_2.geometry("450x180")
 
     # Carregando a imagem
-    pikachu_image = customtkinter.CTkImage(Image.open('images/pikachu_attention.png'), size=(100, 100))
+    image = customtkinter.CTkImage(Image.open('images/file.png'), size=(74, 74))
 
     # Adicionando a imagem ao programa
-    pikachu_place = customtkinter.CTkLabel(master=window_2, image=pikachu_image, text='')
-    pikachu_place.pack(padx=10, pady=0.1)
+    image_place = customtkinter.CTkLabel(master=window_2, image=image, text='')
+    image_place.pack(padx=10, pady=0.1)
 
     # A mensagem do erro
     msg_erro = customtkinter.CTkLabel(master=window_2, text=message, font=('Fixedsys', 10), text_color=('#ef5350'))
@@ -105,3 +105,6 @@ def open_error_window(message):
     exit.pack(padx=10, pady=10)
 
     window_2.mainloop()
+
+# Test
+#open_error_window('Test!')
