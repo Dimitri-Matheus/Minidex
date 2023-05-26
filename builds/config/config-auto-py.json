@@ -1,0 +1,117 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "C:/Users/dimit/OneDrive/Documentos/Project/Minidex/interface.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "C:/Users/dimit/OneDrive/Documentos/Project/Minidex/images/icon.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "Minidex"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": true
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/dimit/AppData/Local/Programs/Python/Python311/Lib/site-packages/customtkinter;customtkinter/"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "data"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "webbrowser"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pypokedex"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "urllib3"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "io"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pickle"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/dimit/OneDrive/Documentos/Project/Minidex/images;images/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/dimit/OneDrive/Documentos/Project/Minidex/themes;themes/"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": "--hidden-import=pkg_resources.py2_warn"
+ }
+}
