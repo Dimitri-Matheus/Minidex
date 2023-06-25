@@ -1,7 +1,6 @@
 <h1 align="center">Minidex</h1>
 
 <h3 align="center">
-	<img src="https://github.com/Dimitri-Matheus/Dimitri-Matheus/assets/121637762/03ec39d0-9d1a-44cd-ba83-825681a44c3f" width="250" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 	This is an open-source Pokedex written in Python that provides information about Pokemon. It has been recently updated with improved user interface and new features for a better user experience.
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
