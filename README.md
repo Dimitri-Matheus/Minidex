@@ -64,4 +64,4 @@ To run the application, you need to have Python 3 installed and the following li
 Contributions are welcome! If you want to contribute to this project, open a new issue to discuss your idea or submit a pull request with the proposed changes.
 
 ## Credits
-This project was developed by Dimitri and uses Pypokedex as a data source. The application design was inspired by the interface of Pokedex from Pokémon games.
+This project was developed by me and uses Pypokedex as a data source. The application design was inspired by the interface of Pokedex from Pokémon games.
