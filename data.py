@@ -85,26 +85,26 @@ def open_error_window(message):
     
     # Janela de erro
     window_2 = customtkinter.CTkToplevel()
-    window_2.title('Atenção')
+    window_2.title('')
     window_2.resizable(width=False, height=False)
-    window_2.geometry("450x180")
+    window_2.geometry("445x130")
 
     # Carregando a imagem
-    image = customtkinter.CTkImage(Image.open('images/file.png'), size=(74, 74))
+    image = customtkinter.CTkImage(Image.open('images/alert.png'), size=(48, 48))
 
     # Adicionando a imagem ao programa
     image_place = customtkinter.CTkLabel(master=window_2, image=image, text='')
     image_place.pack(padx=10, pady=0.1)
 
     # A mensagem do erro
-    msg_erro = customtkinter.CTkLabel(master=window_2, text=message, font=('Fixedsys', 10), text_color=('#ef5350'))
+    msg_erro = customtkinter.CTkLabel(master=window_2, text=message, font=('Fixedsys', 10), text_color=('#E7B60C'))
     msg_erro.pack(padx=10, pady=0.3)
 
     # O botão para sair
-    exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), fg_color='#ef5350', command=window_2.destroy)
+    exit = customtkinter.CTkButton(master=window_2, text='Sair', font=('Fixedsys', 10), text_color=('#feffff', '#333432'), fg_color='#E7B60C', command=window_2.destroy)
     exit.pack(padx=10, pady=10)
 
     window_2.mainloop()
 
-# Test
+# Tests
 #open_error_window('Test!')
